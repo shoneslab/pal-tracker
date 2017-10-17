@@ -1,3 +1,4 @@
+---
 platform: linux
 
 image_resource:
@@ -8,10 +9,7 @@ image_resource:
 
 inputs:
   - name: pal-tracker
-  - name: version
-
-outputs:
-  - name: build-output
+#  - name: version
 
 run:
   path: bash
@@ -19,6 +17,7 @@ run:
   - -exc
   - |
     cd pal-tracker
+    pwd
     chmod u+x ./gradlew
-    ./gradlew -P version=$(cat ../version/number) build
-    cp build/libs/pal-tracker-*.jar ../build-output
+    ./gradlew build
+    cp build/libs/pal-tracker.jar ../build-output
