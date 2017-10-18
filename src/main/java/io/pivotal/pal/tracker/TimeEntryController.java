@@ -16,9 +16,11 @@ public class TimeEntryController {
     private final GaugeService gauge;
     private TimeEntryRepository timeEntriesRepo;
 
-    public TimeEntryController(TimeEntryRepository timeEntriesRepo,
-                               CounterService counter,
-                               GaugeService gauge) {
+    public TimeEntryController(
+            TimeEntryRepository timeEntriesRepo,
+            CounterService counter,
+            GaugeService gauge
+    ) {
         this.timeEntriesRepo = timeEntriesRepo;
         this.counter = counter;
         this.gauge = gauge;
