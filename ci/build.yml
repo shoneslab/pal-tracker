@@ -35,7 +35,7 @@ run:
     service mysql start
 
     cd pal-tracker
-    chmod u+x ./gradlew
+
     mysql -uroot < databases/tracker/create_databases.sql
     ./gradlew -P version=$(cat ../version/number) testMigrate build
     cp build/libs/pal-tracker-*.jar ../build-output
